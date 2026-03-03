@@ -34,6 +34,7 @@ const db = new Sequelize(
         //models: [join(__dirname, '/../../models/**/*.ts')],
         models: [__dirname + '/../models/**/*.ts'],
         schema: 'public',
+        logging: false, //desactiva los logs de sequelize en consola
     },
 
 );

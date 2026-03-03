@@ -6,7 +6,7 @@ import colors from 'colors';
 
 //Conectar a la DB PostGres
 //async function connectDB() { //F1 - Normal functions
-const connectDB = async() => {  //F2-Arrow functions
+export const connectDB = async() => {  //F2-Arrow functions
     try {
         await db.authenticate()
         db.sync()  //sync al crear nuevas columnas las agrega a la DB
@@ -31,7 +31,12 @@ server.use(express.json()) //middleware para leer datos de formulario -express.j
 
 
 //use prmite acceder a las rutas de router: GET: http://localhost:4000/api/products
-server.use('/api/products', router); 
+server.use('/api/products', router);
+
+//Ruta de prueba para verificar que el servidor esta funcionando
+server.get('/api', (req, res) => {
+    res.json({msg: 'Desde api'})
+})
 
 export default server;
 

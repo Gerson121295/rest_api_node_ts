@@ -42,6 +42,7 @@ router.post('/',
 router.put('/:id', 
     //Validacion de data recibida en el Router - npm i express-validator
     productIdValidation,
+    createProductValidation, ///Requerido para testing ya que la validacion con updateProductValidation es opcional, 
     updateProductValidation, //validacion de campos de product usando middleware
     handleInputErrors, //middleware de validacion de errors de campos
     updateProduct
