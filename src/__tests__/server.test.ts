@@ -24,7 +24,7 @@ import request from 'supertest';
 import server , {connectDB} from '../server';
 import db from '../config/db';
 
-
+/*
 describe('Test de servidor GET/api', () => {
 
     test('should send back a json response', async () => {
@@ -45,7 +45,7 @@ describe('Test de servidor GET/api', () => {
     });
 
 })
-
+*/
 
 
 //Forzar que falle la conexion a la DB usando Mocking de Jest

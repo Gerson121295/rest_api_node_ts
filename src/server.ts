@@ -2,6 +2,8 @@
 import express from 'express'
 import router from './router';
 import db from './config/db';
+import swaggerUi from 'swagger-ui-express';
+import swaggerSpec, { swaggerUiOptions } from './config/swagger';
 import colors from 'colors';
 
 //Conectar a la DB PostGres
@@ -34,9 +36,18 @@ server.use(express.json()) //middleware para leer datos de formulario -express.j
 server.use('/api/products', router);
 
 //Ruta de prueba para verificar que el servidor esta funcionando
+/*
 server.get('/api', (req, res) => {
     res.json({msg: 'Desde api'})
 })
+*/
+
+//Docs
+server.use(
+    '/docs',  //ruta para acceder a la documentación de la API: http://localhost:4000/docs
+    swaggerUi.serve, //middleware para servir la documentación de la API
+    swaggerUi.setup(swaggerSpec, swaggerUiOptions) //middleware para configurar la documentación de la API, se le pasa el objeto swaggerSpec que contiene la configuración de la documentación de la API
+)
 
 export default server;
 
