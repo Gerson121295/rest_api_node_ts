@@ -32,7 +32,7 @@ const db = new Sequelize(
     {
         //models : [__dirname + '/../models/**.ts']        
         //models: [join(__dirname, '/../../models/**/*.ts')],
-        models: [__dirname + '/../models/**/*.ts'],
+        models: [__dirname + '/../models/**/*'], // [__dirname + '/../models/**/*.ts']  >se quita la extension .ts ya que al compilar se genera archivos .js y eso afectaa
         schema: 'public',
         logging: false, //desactiva los logs de sequelize en consola
     },

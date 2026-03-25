@@ -15,7 +15,7 @@ try {
 
         //Atributos que no se quieren mostrar al retornar los productos
         attributes: {
-            exclude: ['availability','createdAt', 'updatedAt'] //exclude es para excluir los campos createdAt y updatedAt al retornar los productos
+            exclude: ['createdAt', 'updatedAt'] //exclude: ['availability','createdAt', 'updatedAt'] //exclude es para excluir los campos createdAt y updatedAt al retornar los productos
         }
     }); 
     //se responde al cliente con un json que contiene los productos encontrados en la DB
